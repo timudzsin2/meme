@@ -77,7 +77,39 @@ button:hover{
 .gallery-content-videos>video{
     height: 350px;
 }
-
-
+.gallery-content-sounds{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+.gallery-content-sounds p{
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+.gallery-content-sounds audio{
+    width: 100%;
+}
+.gallery-content-sounds div{
+    overflow: hidden;
+    background-color: rgb(26, 26, 26);
+}
+.gallery-content-b-sounds{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.gallery-content-b-sounds p{
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+.gallery-content-b-sounds audio{
+    width: 100%;
+}
+.gallery-content-b-sounds div{
+    overflow: hidden;
+    background-color: rgb(26, 26, 26);
+}
 
 

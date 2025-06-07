@@ -45,6 +45,7 @@ videosButton.addEventListener("click", function(){
         const video = document.createElement("video");
         video.src = VIDEOS[i];
         video.controls = true;
+        video.muted = true;
         galleryContent.appendChild(video);
     }
 });
@@ -65,7 +66,42 @@ soundsButton.addEventListener("click", function(){
         const audio = document.createElement("audio");
         audio.src = SOUNDS[i];
         audio.controls = true;
-        galleryContent.appendChild(audio);
+
+        const name = document.createElement("p");
+        name.textContent = SOUNDS[i].slice(7, SOUNDS[i].length -4);
+        
+        const div = document.createElement("div");
+        div.appendChild(audio);
+        div.appendChild(name);
+        galleryContent.appendChild(div);
     }
 });
+
+
+bSoundsButton.addEventListener("click", function(){
+    galleryContent.className = "";
+    galleryContent.classList.add("gallery-content-b-sounds");
+    galleryContent.innerHTML = "";
+
+    // Fisher–Yates keverés
+    for (let i = BSOUNDS.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [BSOUNDS[i], BSOUNDS[j]] = [BSOUNDS[j], BSOUNDS[i]];
+    }
+
+    for (let i = 0; i < BSOUNDS.length; i++) {
+        const audio = document.createElement("audio");
+        audio.src = BSOUNDS[i];
+        audio.controls = true;
+
+        const name = document.createElement("p");
+        name.textContent = BSOUNDS[i].slice(8, BSOUNDS[i].length -4);
+        
+        const div = document.createElement("div");
+        div.appendChild(audio);
+        div.appendChild(name);
+        galleryContent.appendChild(div);
+    }
+});
+
 
