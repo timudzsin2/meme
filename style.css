@@ -62,10 +62,22 @@ button:hover{
 .gallery-content-images{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     justify-content: space-evenly;
 }
 .gallery-content-images>img{
     height: 350px;
-    border: white solid 5px;
 }
+.gallery-content-videos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+.gallery-content-videos>video{
+    height: 350px;
+}
+
+
+
+
