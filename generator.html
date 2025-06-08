@@ -6,7 +6,7 @@
     <title>Slideshow generator</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="main.js"></script>
+    <script type="module" src="generator.js"></script>
 </head>
 <body>
     <nav>
@@ -15,7 +15,8 @@
             <a href="generator.html">Generator</a>
         </div>
         <div id="generator-controls">
-            <h1>temp text</h1>
+            <input type="number" id="iteration-count" placeholder="Number of iterations">
+            <button id="start-button">Start</button>
         </div>
     </nav>
     <div id="generator-canvas">

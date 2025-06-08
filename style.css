@@ -2,14 +2,19 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    color: white;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    line-height: 42px;
 }
+
 
 body{
     background-color: black;
 }
 nav{
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 0.4fr 1fr;
 }
 #pages-nav{
     display: grid;
@@ -22,17 +27,19 @@ nav{
     grid-template-columns: 6fr 6fr 13fr 17fr;
 }
 #generator-controls{
-    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#generator-controls>input{
+    border: 20px;
+    color: black;
 }
 
 
 a{
     text-align: center;
     align-self: center;
-    color: white;
     text-decoration: none;
-    font-size: 40px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
     font-style: italic;
 }
 a:hover{
@@ -43,9 +50,6 @@ a:hover{
 button{
     background: none;
     border: none;
-    color: white;
-    font-size: 40px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
@@ -84,11 +88,6 @@ button:hover{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 50px;
 }
-.gallery-content-sound-effects p{
-    color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
-}
 .gallery-content-sound-effects audio{
     width: 100%;
 }
@@ -101,11 +100,6 @@ button:hover{
     grid-template-columns: 1fr 1fr;
     gap: 50px;
 }
-.gallery-content-background-sounds p{
-    color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
-}
 .gallery-content-background-sounds audio{
     width: 100%;
 }
@@ -113,5 +107,15 @@ button:hover{
     overflow: hidden;
     background-color: rgb(26, 26, 26);
 }
+
+
+#generator-canvas{
+    height: calc(100vh - 47px);
+    background-color: rgb(58, 0, 58);
+}
+
+
+
+
 
 
