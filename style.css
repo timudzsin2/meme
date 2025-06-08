@@ -9,7 +9,7 @@ body{
 }
 nav{
     display: grid;
-    grid-template-columns: 0.6fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
 }
 #pages-nav{
     display: grid;
@@ -19,7 +19,7 @@ nav{
 }
 #gallery-controls{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 6fr 6fr 13fr 17fr;
 }
 #generator-controls{
     color: white;
@@ -47,6 +47,8 @@ button{
     font-size: 40px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
     cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
 }
 button:hover{
     color:lightskyblue;
@@ -77,37 +79,37 @@ button:hover{
 .gallery-content-videos>video{
     height: 350px;
 }
-.gallery-content-sounds{
+.gallery-content-sound-effects{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 50px;
 }
-.gallery-content-sounds p{
+.gallery-content-sound-effects p{
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 30px;
 }
-.gallery-content-sounds audio{
+.gallery-content-sound-effects audio{
     width: 100%;
 }
-.gallery-content-sounds div{
+.gallery-content-sound-effects div{
     overflow: hidden;
     background-color: rgb(26, 26, 26);
 }
-.gallery-content-b-sounds{
+.gallery-content-background-sounds{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
 }
-.gallery-content-b-sounds p{
+.gallery-content-background-sounds p{
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 30px;
 }
-.gallery-content-b-sounds audio{
+.gallery-content-background-sounds audio{
     width: 100%;
 }
-.gallery-content-b-sounds div{
+.gallery-content-background-sounds div{
     overflow: hidden;
     background-color: rgb(26, 26, 26);
 }

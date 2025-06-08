@@ -1,12 +1,12 @@
 import { IMAGES } from "./imagesArray.js";
 import { VIDEOS } from "./videosArray.js";
-import { SOUNDS } from "./soundsArray.js";
-import { BSOUNDS } from "./bsoundsArray.js";
+import { SOUND_EFFECTS } from "./soundEffectsArray.js";
+import { BACKGROUND_SOUNDS } from "./backgroundSoundsArray.js";
 
 const imagesButton = document.getElementById("images-button");
 const videosButton = document.getElementById("videos-button");
-const soundsButton = document.getElementById("sounds-button");
-const bSoundsButton = document.getElementById("b-sounds-button");
+const soundEffectsButton = document.getElementById("sound-effects-button");
+const backgroundSoundsButton = document.getElementById("background-sounds-button");
 
 const galleryContent = document.getElementById("gallery-content");
 
@@ -51,24 +51,24 @@ videosButton.addEventListener("click", function(){
 });
 
 
-soundsButton.addEventListener("click", function(){
+soundEffectsButton.addEventListener("click", function(){
     galleryContent.className = "";
-    galleryContent.classList.add("gallery-content-sounds");
+    galleryContent.classList.add("gallery-content-sound-effects");
     galleryContent.innerHTML = "";
 
     // Fisher–Yates keverés
-    for (let i = SOUNDS.length - 1; i > 0; i--) {
+    for (let i = SOUND_EFFECTS.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [SOUNDS[i], SOUNDS[j]] = [SOUNDS[j], SOUNDS[i]];
+        [SOUND_EFFECTS[i], SOUND_EFFECTS[j]] = [SOUND_EFFECTS[j], SOUND_EFFECTS[i]];
     }
 
-    for (let i = 0; i < SOUNDS.length; i++) {
+    for (let i = 0; i < SOUND_EFFECTS.length; i++) {
         const audio = document.createElement("audio");
-        audio.src = SOUNDS[i];
+        audio.src = SOUND_EFFECTS[i];
         audio.controls = true;
 
         const name = document.createElement("p");
-        name.textContent = SOUNDS[i].slice(7, SOUNDS[i].length -4);
+        name.textContent = SOUND_EFFECTS[i].slice(7, SOUND_EFFECTS[i].length -4);
         
         const div = document.createElement("div");
         div.appendChild(audio);
@@ -78,24 +78,24 @@ soundsButton.addEventListener("click", function(){
 });
 
 
-bSoundsButton.addEventListener("click", function(){
+backgroundSoundsButton.addEventListener("click", function(){
     galleryContent.className = "";
-    galleryContent.classList.add("gallery-content-b-sounds");
+    galleryContent.classList.add("gallery-content-background-sounds");
     galleryContent.innerHTML = "";
 
     // Fisher–Yates keverés
-    for (let i = BSOUNDS.length - 1; i > 0; i--) {
+    for (let i = BACKGROUND_SOUNDS.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [BSOUNDS[i], BSOUNDS[j]] = [BSOUNDS[j], BSOUNDS[i]];
+        [BACKGROUND_SOUNDS[i], BACKGROUND_SOUNDS[j]] = [BACKGROUND_SOUNDS[j], BACKGROUND_SOUNDS[i]];
     }
 
-    for (let i = 0; i < BSOUNDS.length; i++) {
+    for (let i = 0; i < BACKGROUND_SOUNDS.length; i++) {
         const audio = document.createElement("audio");
-        audio.src = BSOUNDS[i];
+        audio.src = BACKGROUND_SOUNDS[i];
         audio.controls = true;
 
         const name = document.createElement("p");
-        name.textContent = BSOUNDS[i].slice(8, BSOUNDS[i].length -4);
+        name.textContent = BACKGROUND_SOUNDS[i].slice(8, BACKGROUND_SOUNDS[i].length -4);
         
         const div = document.createElement("div");
         div.appendChild(audio);
@@ -103,5 +103,7 @@ bSoundsButton.addEventListener("click", function(){
         galleryContent.appendChild(div);
     }
 });
+
+
 
 

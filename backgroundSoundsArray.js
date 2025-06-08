@@ -1,4 +1,4 @@
-export const BSOUNDS = [
+export const BACKGROUND_SOUNDS = [
     "bsounds/scary_tiktok_music.mp3",
     "bsounds/sound5.mp3",
     "bsounds/streetfood_franklin_ringtone.mp3",

@@ -1,4 +1,4 @@
-export const SOUNDS = [
+export const SOUND_EFFECTS = [
     "sounds/chineese_bluetooth.mp3",
     "sounds/skyrim_quest_complete.mp3",
     "sounds/iphone_piano_riff.mp3",
