@@ -1,5 +1,27 @@
 export const BACKGROUND_SOUNDS = [
+    "media/backgroundSounds/air.mp3",
+    "media/backgroundSounds/break_from_the_ads.mp3",
+    "media/backgroundSounds/canned_chicken.mp3",
+    "media/backgroundSounds/classical_ah_sound.mp3",
+    "media/backgroundSounds/cough.mp3",
+    "media/backgroundSounds/csgo_menu_music.mp3",
+    "media/backgroundSounds/degrease_me.mp3",
+    "media/backgroundSounds/flight_announcement.mp3",
+    "media/backgroundSounds/fortnite_og_lobby_music.mp3",
+    "media/backgroundSounds/gah_dayum_extended.mp3",
+    "media/backgroundSounds/ignore_my_yawn_extended.mp3",
+    "media/backgroundSounds/industrial_society_and_its_future.mp3",
+    "media/backgroundSounds/its_been_a_fing_year.mp3",
+    "media/backgroundSounds/i_pledge_allegiance_to_the_flag.mp3",
+    "media/backgroundSounds/mmm_ringtone.mp3",
+    "media/backgroundSounds/samsung_royal_ringtone.mp3",
+    "media/backgroundSounds/scary_tiktok_music.mp3",
     "media/backgroundSounds/sound1.mp3",
     "media/backgroundSounds/sound2.mp3",
-    "media/backgroundSounds/sound3.mp3"
+    "media/backgroundSounds/sound3.mp3",
+    "media/backgroundSounds/sound4.mp3",
+    "media/backgroundSounds/sound5.mp3",
+    "media/backgroundSounds/sound6.mp3",
+    "media/backgroundSounds/streetfood_franklin_ringtone.mp3",
+    "media/backgroundSounds/wet_bubby_sounds.mp3"
 ];
