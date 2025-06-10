@@ -1,7 +1,7 @@
-import { IMAGES } from "./imagesArray.js";
-import { VIDEOS } from "./videosArray.js";
-import { SOUND_EFFECTS } from "./soundEffectsArray.js";
-import { BACKGROUND_SOUNDS } from "./backgroundSoundsArray.js";
+import { IMAGES } from "./media/imagesArray.js";
+import { VIDEOS } from "./media/videosArray.js";
+import { SOUND_EFFECTS } from "./media/soundEffectsArray.js";
+import { BACKGROUND_SOUNDS } from "./media/backgroundSoundsArray.js";
 
 const imagesButton = document.getElementById("images-button");
 const videosButton = document.getElementById("videos-button");
@@ -68,7 +68,7 @@ soundEffectsButton.addEventListener("click", function(){
         audio.controls = true;
 
         const name = document.createElement("p");
-        name.textContent = SOUND_EFFECTS[i].slice(7, SOUND_EFFECTS[i].length -4);
+        name.textContent = SOUND_EFFECTS[i].slice(19, SOUND_EFFECTS[i].length -4);
         
         const div = document.createElement("div");
         div.appendChild(audio);
@@ -95,7 +95,7 @@ backgroundSoundsButton.addEventListener("click", function(){
         audio.controls = true;
 
         const name = document.createElement("p");
-        name.textContent = BACKGROUND_SOUNDS[i].slice(8, BACKGROUND_SOUNDS[i].length -4);
+        name.textContent = BACKGROUND_SOUNDS[i].slice(23, BACKGROUND_SOUNDS[i].length -4);
         
         const div = document.createElement("div");
         div.appendChild(audio);

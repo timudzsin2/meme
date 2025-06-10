@@ -9,7 +9,7 @@ fajlok = os.listdir("images")
 js_szoveg = 'export const IMAGES = [\n'
 i = 0
 while i < len(fajlok):
-    sor = '    "' + 'images' + '/' + fajlok[i] + '"'
+    sor = '    "' + 'media/images' + '/' + fajlok[i] + '"'
     if i < len(fajlok) - 1:
         sor += ','
     js_szoveg += sor + '\n'
@@ -30,7 +30,7 @@ fajlok = os.listdir("videos")
 js_szoveg = 'export const VIDEOS = [\n'
 i = 0
 while i < len(fajlok):
-    sor = '    "' + 'videos' + '/' + fajlok[i] + '"'
+    sor = '    "' + 'media/videos' + '/' + fajlok[i] + '"'
     if i < len(fajlok) - 1:
         sor += ','
     js_szoveg += sor + '\n'
@@ -51,7 +51,7 @@ fajlok = os.listdir("soundEffects")
 js_szoveg = 'export const SOUND_EFFECTS = [\n'
 i = 0
 while i < len(fajlok):
-    sor = '    "' + 'sounds' + '/' + fajlok[i] + '"'
+    sor = '    "' + 'media/soundEffects' + '/' + fajlok[i] + '"'
     if i < len(fajlok) - 1:
         sor += ','
     js_szoveg += sor + '\n'
@@ -72,7 +72,7 @@ fajlok = os.listdir("backgroundSounds")
 js_szoveg = 'export const BACKGROUND_SOUNDS = [\n'
 i = 0
 while i < len(fajlok):
-    sor = '    "' + 'bsounds' + '/' + fajlok[i] + '"'
+    sor = '    "' + 'media/backgroundSounds' + '/' + fajlok[i] + '"'
     if i < len(fajlok) - 1:
         sor += ','
     js_szoveg += sor + '\n'
