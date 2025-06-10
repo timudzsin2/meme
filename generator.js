@@ -5,17 +5,16 @@ import { BACKGROUND_SOUNDS } from "./media/backgroundSoundsArray.js";
 
 const startButton = document.getElementById("start-button");
 const generatorCanvas = document.getElementById("generator-canvas");
-let running;
 
 startButton.addEventListener("click", function(){
     let iterationCount = document.getElementById("iteration-count").value;
     iterationCount = Number(iterationCount);
 
-    imagesAndVideosIterator(iterationCount);
+    imagesAndVideosGenerator(iterationCount);
     backgroundSoundsGenerator();
 });
 
-function imagesAndVideosIterator(x){
+function imagesAndVideosGenerator(x){
 
     let i = 0;
     while(i < x){
@@ -33,14 +32,26 @@ function backgroundSoundsGenerator(){
         [BACKGROUND_SOUNDS[i], BACKGROUND_SOUNDS[j]] = [BACKGROUND_SOUNDS[j], BACKGROUND_SOUNDS[i]];
     }
 
-    console.log(BACKGROUND_SOUNDS[0] + "  -  playing");
-    let backgroundSound = new Audio(BACKGROUND_SOUNDS[0]);
-    backgroundSound.volume = 0.2;
+    backgroundSoundsRecursion(0);
+}
+function backgroundSoundsRecursion(x){
+    console.log(BACKGROUND_SOUNDS[x] + "  -  playing");
+    let backgroundSound = new Audio(BACKGROUND_SOUNDS[x]);
+    backgroundSound.volume = 0.4;
     backgroundSound.play();
-    
-
-
-    while(false){
-        console.log("running");
-    }
+    backgroundSound.addEventListener("ended", ()=>{
+        console.log(BACKGROUND_SOUNDS[x] + "  -  done");
+        if((x+1) <= BACKGROUND_SOUNDS.length){
+            backgroundSoundsRecursion(x + 1);
+        }else{
+            console.log(BACKGROUND_SOUNDS[x + 1] + "  -  playing");
+            let backgroundSound = new Audio(BACKGROUND_SOUNDS[x + 1]);
+            backgroundSound.volume = 0.4;
+            backgroundSound.play();
+            backgroundSound.addEventListener("ended", ()=>{
+                console.log(BACKGROUND_SOUNDS[x + 1] + "  -  done");
+                console.log("RAN OUT OF BACKGROUND SOUNDS")
+            });
+        }
+    });
 }
