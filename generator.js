@@ -17,18 +17,79 @@ startButton.addEventListener("click", function(){
 
 
 async function imagesAndVideosGenerator(x){
+    // Fisher–Yates keverés
+    for (let i = IMAGES.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [IMAGES[i], IMAGES[j]] = [IMAGES[j], IMAGES[i]];
+    }
+    // Fisher–Yates keverés
+    for (let i = VIDEOS.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [VIDEOS[i], VIDEOS[j]] = [VIDEOS[j], VIDEOS[i]];
+    }
+    const VIDEO_VARIABLES = [];
+    for (let i = 0; i < VIDEOS.length; i++) {
+        let video = document.createElement('video');
+        video.src = VIDEOS[i];
+        video.muted = true;
+        video.preload = "metadata";
+        video.addEventListener("loadedmetadata", ()=>{
+            //console.log('Metadata loaded');
+            //console.log(`Index:   ${i}    Duration:   ${video.duration}`);
+        });
+        VIDEO_VARIABLES.push(video);
+    }
+    await sleep(100);
+    //generatorCanvas.appendChild(VIDEO_VARIABLES[0]);
+    //console.log("asd");
+    //await sleep(100000);
+
+    let imageIndex = 0;
+    let videoIndex = 0;
     let i = 0;
     while(i < x){
-        console.log("Image or Video: " + i);
-        
-
-        await sleep(1000);
+        //console.log("################ Image or Video: " + i);
+        let imageOrSound = Math.floor(Math.random() * 2);
+        if(imageOrSound == 0){
+            if(imageIndex == IMAGES.length){
+                console.log("--- RAN OUT OF IMAGES")
+                alert("RAN OUT OF IMAGES");
+                location.reload();
+            }
+            let image = document.createElement("img");
+            image.src = IMAGES[imageIndex];
+            generatorCanvas.innerHTML = "";
+            generatorCanvas.appendChild(image);
+            let random = Math.floor(Math.random() * 1800) + 600;
+            console.log("Iteration: " + i + ", Image:  " + IMAGES[imageIndex].slice(13) + "  for  " + random / 1000 + "  seconds  -  playing")
+            await sleep(random)
+            
+            imageIndex++;
+        }else{
+            if(videoIndex == VIDEOS.length){
+                console.log("--- RAN OUT OF VIDEOS")
+                alert("RAN OUT OF VIDEOS");
+                location.reload();
+            }
+            let video = VIDEO_VARIABLES[videoIndex];
+            video.play();
+            generatorCanvas.innerHTML = "";
+            generatorCanvas.appendChild(video);
+            //console.log(video.duration);
+            console.log("Iteration: " + i + ", Video:  " + VIDEOS[videoIndex].slice(13) + "  -  playing")
+            await sleep(video.duration * 1000);
+            videoIndex++;
+        }
         i++;
     }
+    console.log(x + " ITERATIONS DONE")
+    alert(x + " ITERATIONS DONE");
+    location.reload();
 }
 
 
-function backgroundSoundsGenerator(){
+async function backgroundSoundsGenerator(){
+    await sleep(1);
     // Fisher–Yates keverés
     for (let i = BACKGROUND_SOUNDS.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -36,7 +97,8 @@ function backgroundSoundsGenerator(){
     }
     backgroundSoundsRecursion(0);
 }
-function backgroundSoundsRecursion(x){
+async function backgroundSoundsRecursion(x){
+    await sleep(1);
     let backgroundSound = new Audio(BACKGROUND_SOUNDS[x]);
     backgroundSound.volume = 0.4;
     backgroundSound.play();
@@ -53,6 +115,8 @@ function backgroundSoundsRecursion(x){
             backgroundSound.addEventListener("ended", ()=>{
                 //console.log("Background sound:   " + BACKGROUND_SOUNDS[x + 1].slice(23) + "  -  done");
                 console.log("--- RAN OUT OF BACKGROUND SOUNDS")
+                alert("RAN OUT OF BACKGROUND SOUNDS");
+                location.reload();
             });
         }
     });
@@ -60,6 +124,7 @@ function backgroundSoundsRecursion(x){
 
 
 async function soundEffectsGenerator(){
+    await sleep(1);
     // Fisher–Yates keverés
     for (let i = SOUND_EFFECTS.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -86,6 +151,8 @@ async function soundEffectsRecursion(x){
             console.log("Sound effect:  " + SOUND_EFFECTS[x + 1].slice(19) + " -  playing");
             soundEffect.addEventListener("ended", ()=>{
                 console.log("--- RAN OUT OF SOUND EFFECTS")
+                alert("RAN OUT OF SOUND EFFECTS");
+                location.reload();
             });
         }
     });
