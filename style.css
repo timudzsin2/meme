@@ -112,7 +112,7 @@ button:hover{
 #generator-canvas{
     width: 100vw;
     height: calc(100vh - 47px);
-    background-color: rgb(58, 0, 58);
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
